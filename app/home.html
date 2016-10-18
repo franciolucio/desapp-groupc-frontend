@@ -50,8 +50,12 @@
 			<div class="wrap-col">
 				<div class="box">
 					<div class="heading"><h2>Friends</h2></div>
-					<div class="content">
-						<p>LISTADO DE AMIGOS</p>
+					<div class="content" ng-controller="MainController">
+						<div style="overflow-y: scroll; height: 150px" >
+							<div ng-repeat="friend in friends">
+								<a href="#options">{{friend.userName}}</a>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="box">
@@ -60,7 +64,7 @@
 						<ul>
 							<li><a href="#options">My Profile</a></li>
 							<li><a href="#options">My Events</a></li>
-							<li><a href="#options">Add Event</a></li>
+							<li><a href="#event">Add Event</a></li>
 							<li><a href="#options">New Tour</a></li>
 						</ul>
 					</div>
