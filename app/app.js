@@ -1,8 +1,20 @@
+/*APP*/
+
 var app = angular.module("app", ['ngRoute']);
  
 app.config(['$routeProvider', function($routeProvider) {
 
   $routeProvider.when('/', {
+    templateUrl: "login.html",
+    controller: "LoginController"
+  });
+
+  $routeProvider.when('/home', {
+    templateUrl: "home.html",
+    controller: "EventsController"
+  });
+
+  $routeProvider.when('/events', {
     templateUrl: "views/events.html",
     controller: "EventsController"
   });
@@ -10,11 +22,6 @@ app.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/profile', {
     templateUrl: "views/profile.html",
     controller: "ProfileController"
-  });
-
-  $routeProvider.when('/login', {
-    templateUrl: "login.html",
-    controller: "LoginController"
   });
 
   $routeProvider.when('/newEvent', {
@@ -27,6 +34,9 @@ app.config(['$routeProvider', function($routeProvider) {
   });
    
 }]);
+
+
+/*Login Controller*/
 
 app.controller("LoginController", [function() {
 }]);
@@ -46,6 +56,9 @@ app.controller("ProfileController", ["$http", "$log","$scope", function($http,$l
   }
 }]);
 
+
+/*New Event Controller*/
+
 app.controller("NewEventController", ["$http", "$log","$scope", function($http,$log,$scope) {
   
   $scope.lucio = 0;
@@ -54,6 +67,9 @@ app.controller("NewEventController", ["$http", "$log","$scope", function($http,$
     $scope.alert = 10000;
   }
 }]);
+
+
+/*Events Controller*/
 
 app.controller("EventsController", ["$http", "$log","$scope", function($http,$log,$scope) {
   
