@@ -26,7 +26,7 @@
 <body style="background-image:url(images/fondo-madera-negro.jpg)">
 
 <!--Header-->
-<header>
+<header style="margin-bottom: 15px">
 	<div class="wrap-header zerogrid" style="height: 75px">
 		<div id="logo" style="width: 150px; top: 0px; padding-bottom: 0px; padding-top: 0px"><img src="./images/Logo_Stain.png"/></div>
 		<nav>
@@ -44,16 +44,16 @@
 
 <!--Content-->
 <section id="content">
-	<div class="wrap-content zerogrid">
+	<div class="wrap-content zerogrid" style="margin-top: 15px; margin-bottom: 15px">
 	
 		<div id="sidebar" class="col-1-3">
 			<div class="wrap-col">
 				<div class="box">
 					<div class="heading"><h2>Friends</h2></div>
-					<div class="content" ng-controller="MainController">
+					<div class="content" ng-controller="EventsController">
 						<div style="overflow-y: scroll; height: 150px" >
 							<div ng-repeat="friend in friends">
-								<a href="#options">{{friend.userName}}</a>
+								<a href="#profile">{{friend.userName}}</a>
 							</div>
 						</div>
 					</div>
@@ -62,10 +62,10 @@
 					<div class="heading"><h2>Options</h2></div>
 					<div class="content">
 						<ul>
-							<li><a href="#options">My Profile</a></li>
-							<li><a href="#options">My Events</a></li>
-							<li><a href="#event">Add Event</a></li>
-							<li><a href="#options">New Tour</a></li>
+							<li><a href="#profile">My Profile</a></li>
+							<li><a href="#profile">My Events</a></li>
+							<li><a href="#newEvent">Add Event</a></li>
+							<li><a href="#profile">New Tour</a></li>
 						</ul>
 					</div>
 				</div>
@@ -79,7 +79,7 @@
 </section>
 
 <!--Footer-->
-<footer>
+<footer style="margin-top: 15px">
 	<div class="wrap-footer zerogrid">
 		<div class="row">
 			<div class="col-1-3">
@@ -87,7 +87,7 @@
 					<div class="box">
 						<div class="heading"><h2>Stain S.A.</h2></div>
 						<div class="content">
-							<p>Stain S.A. tiene mas de 100 años de experiencia en la organizacion de eventos. Fundada por Alan Marino en el año 1875. Cuenta con mas de 1000 sucursales en todo el mundo. </p>
+							<p>Stain S.A. tiene mas de 100 años de experiencia en la organizacion de eventos. Fundada por Alan Marino en el año 1907. Cuenta con mas de 1000 sucursales en todo el mundo. </p>
 						</div>
 					</div>
 				</div>
@@ -97,7 +97,7 @@
 					<div class="box">
 						<div class="heading"><h2>Stain - Where we go?</h2></div>
 						<div class="content">
-							<p>Stain - Where we go? es una red social que brinda la posibilidad a sus usuarios de organizar diferentes tipos de salidas, ya sea solos, en pareja o con amigos. Cuenta con mas de 1000 eventos distintos y es hoy en dia la principal pagina web elegida por usuarios quienes quieren garantizar una salida inolvidable.</p>
+							<p>Stain - Where we go? es una red social creada por la empresa Stain S.A., que brinda la posibilidad a sus usuarios de organizar diferentes tipos de salidas, ya sea solos, en pareja o con amigos. Cuenta con miles de eventos diferentes y es hoy en dia la principal pagina web elegida por usuarios quienes quieren garantizar una salida inolvidable.</p>
 						</div>
 					</div>
 				</div>

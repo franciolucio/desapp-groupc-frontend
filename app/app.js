@@ -3,13 +3,13 @@ var app = angular.module("app", ['ngRoute']);
 app.config(['$routeProvider', function($routeProvider) {
 
   $routeProvider.when('/', {
-    templateUrl: "views/main.html",
-    controller: "MainController"
+    templateUrl: "views/events.html",
+    controller: "EventsController"
   });
  
-  $routeProvider.when('/options', {
-    templateUrl: "views/options.html",
-    controller: "OptionsController"
+  $routeProvider.when('/profile', {
+    templateUrl: "views/profile.html",
+    controller: "ProfileController"
   });
 
   $routeProvider.when('/login', {
@@ -17,9 +17,9 @@ app.config(['$routeProvider', function($routeProvider) {
     controller: "LoginController"
   });
 
-  $routeProvider.when('/event', {
-    templateUrl: "views/event.html",
-    controller: "EventController"
+  $routeProvider.when('/newEvent', {
+    templateUrl: "views/newEvent.html",
+    controller: "NewEventController"
   });
    
   $routeProvider.otherwise({
@@ -31,7 +31,7 @@ app.config(['$routeProvider', function($routeProvider) {
 app.controller("LoginController", [function() {
 }]);
  
-app.controller("OptionsController", ["$http", "$log","$scope", function($http,$log,$scope) {
+app.controller("ProfileController", ["$http", "$log","$scope", function($http,$log,$scope) {
   
   $http.get('http://localhost:8080/desapp-groupc-backend/rest/user/userFrom/1').then(succUser).catch(failEvents);
 
@@ -46,7 +46,7 @@ app.controller("OptionsController", ["$http", "$log","$scope", function($http,$l
   }
 }]);
 
-app.controller("EventController", ["$http", "$log","$scope", function($http,$log,$scope) {
+app.controller("NewEventController", ["$http", "$log","$scope", function($http,$log,$scope) {
   
   $scope.lucio = 0;
 
@@ -55,7 +55,7 @@ app.controller("EventController", ["$http", "$log","$scope", function($http,$log
   }
 }]);
 
-app.controller("MainController", ["$http", "$log","$scope", function($http,$log,$scope) {
+app.controller("EventsController", ["$http", "$log","$scope", function($http,$log,$scope) {
   
   $http.get('http://localhost:8080/desapp-groupc-backend/rest/event/allEvents').then(succEvents).catch(fail);
   $http.get('http://localhost:8080/desapp-groupc-backend/rest/user/allFriends/1').then(succFriends).catch(fail);
