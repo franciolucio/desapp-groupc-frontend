@@ -30,7 +30,7 @@ app.config(['$routeProvider', function($routeProvider) {
   });
    
   $routeProvider.otherwise({
-        redirectTo: '/'
+        redirectTo: 'login.html'
   });
    
 }]);
@@ -39,13 +39,11 @@ app.config(['$routeProvider', function($routeProvider) {
 /*Login Controller*/
 
 app.controller("LoginController", [function() {
+
 }]);
  
 app.controller("ProfileController", ["$http", "$log","$scope", function($http,$log,$scope) {
   
-  $http.get('http://localhost:8080/desapp-groupc-backend/rest/user/userFrom/1').then(succUser).catch(failEvents);
-
-
   function succUser(response){
     $scope.user = response.data;
   }
@@ -54,6 +52,9 @@ app.controller("ProfileController", ["$http", "$log","$scope", function($http,$l
     $log.error('Ocurrio un error: ' + error.data);
     return 'Ocurrio un error';
   }
+
+  $http.get('http://localhost:8080/desapp-groupc-backend/rest/user/userFrom/1').then(succUser).catch(failEvents);
+
 }]);
 
 
@@ -63,18 +64,16 @@ app.controller("NewEventController", ["$http", "$log","$scope", function($http,$
   
   $scope.lucio = 0;
 
-  function agregar(){
+  function agregar(aaa){
     $scope.alert = 10000;
   }
+
 }]);
 
 
 /*Events Controller*/
 
 app.controller("EventsController", ["$http", "$log","$scope", function($http,$log,$scope) {
-  
-  $http.get('http://localhost:8080/desapp-groupc-backend/rest/event/allEvents').then(succEvents).catch(fail);
-  $http.get('http://localhost:8080/desapp-groupc-backend/rest/user/allFriends/1').then(succFriends).catch(fail);
 
   function succEvents(response){
     $scope.events = response.data;
@@ -94,4 +93,9 @@ app.controller("EventsController", ["$http", "$log","$scope", function($http,$lo
   function suc(response){
     return response.data;
   }
+
+  $http.get('http://localhost:8080/desapp-groupc-backend/rest/event/allEvents').then(succEvents).catch(fail);
+  
+  $http.get('http://localhost:8080/desapp-groupc-backend/rest/user/allFriends/1').then(succFriends).catch(fail);
+
 }]);
